@@ -98,7 +98,7 @@ export const Login = () => (
               Senha
             </FormLabel>
             <Input
-              placeholder="Digite sua senha de acesso"
+              placeholder="Digite sua senha"
               size="lg"
               fontSize={"13px"}
               borderColor={"white"}
