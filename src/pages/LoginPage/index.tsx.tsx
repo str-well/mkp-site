@@ -21,6 +21,7 @@ export const Login = () => (
     bgPosition={"center"}
     bgRepeat={"no-repeat"}
     textColor={"white"}
+    padding={"1rem"}
   >
     <Flex
       w={"50%"}
@@ -28,6 +29,7 @@ export const Login = () => (
       align={"center"}
       justify={"center"}
       flexDir={"column"}
+      display={["none", "flex"]}
     >
       <Flex justify={"center"} flexDir={"column"}>
         <Heading
@@ -45,7 +47,12 @@ export const Login = () => (
           LEARNER!
         </Heading>
       </Flex>
-      <Flex justify={"center"} pl={"13rem"} pt={"5rem"}>
+      <Flex
+        justify={"center"}
+        pl={"13rem"}
+        pt={"5rem"}
+        display={["none", "flex"]}
+      >
         <Flex w={"100%"}>
           {" "}
           <Text fontSize="xl">
@@ -57,7 +64,7 @@ export const Login = () => (
       </Flex>
     </Flex>
     <Flex
-      w={"50%"}
+      w={["100%", "50%"]}
       h={"100%"}
       align={"center"}
       justify={"center"}
@@ -65,9 +72,14 @@ export const Login = () => (
     >
       <Flex justify={"center"} flexDir={"column"}>
         {" "}
-        <Image src="/assets/logo-mkp-login.svg" alt="Logo" w={"100%"} />
+        <Image
+          src="/assets/logo-mkp-login.svg"
+          alt="Logo"
+          w={["80%", "100%"]}
+          alignSelf={"center"}
+        />
         <FormControl>
-          <Stack spacing={3} w={"70%"}>
+          <Stack spacing={3} w={["100%", "70%"]}>
             <FormLabel fontSize="medium" pt={"3rem"}>
               E-mail
             </FormLabel>
