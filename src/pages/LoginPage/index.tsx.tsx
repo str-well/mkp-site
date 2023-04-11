@@ -103,16 +103,23 @@ export const Login = () => (
                 Esqueceu sua senha?{" "}
               </Link>
             </VStack>
-            <Button fontWeight={"bold"} type="submit" borderRadius={"3xl"}>
+            <Button
+              backgroundColor={"rgb(255 255 255 / 25%)"}
+              fontWeight={"bold"}
+              type="submit"
+              borderRadius={"3xl"}
+              _hover={{ backgroundColor: "rgb(255 255 255 / 45%)" }}
+            >
               {" "}
               ENTRAR{" "}
             </Button>
+
             <Button
               backgroundColor={"#FEC242"}
               textColor={"purple.900"}
               fontWeight={"bold"}
               borderRadius={"3xl"}
-              _hover={{ backgroundColor: "var(--chakra-colors-yellow-300)" }}
+              _hover={{ backgroundColor: "var(--chakra-colors-yellow-200)" }}
             >
               {" "}
               CADASTRAR{" "}
