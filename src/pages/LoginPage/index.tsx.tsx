@@ -75,9 +75,10 @@ export const Login = () => (
               type="email"
               placeholder="Digite seu e-mail"
               size="lg"
+              fontSize={"13px"}
               borderColor={"white"}
               marginTop={"4px !important"}
-              _placeholder={{ color: "white", fontSize: "sm" }}
+              _placeholder={{ color: "white" }}
               borderRadius={"3xl"}
             />
 
@@ -87,9 +88,12 @@ export const Login = () => (
             <Input
               placeholder="Digite sua senha de acesso"
               size="lg"
+              fontSize={"13px"}
               borderColor={"white"}
               marginTop={"4px !important"}
-              _placeholder={{ color: "white", fontSize: "sm" }}
+              _placeholder={{
+                color: "white",
+              }}
               borderRadius={"3xl"}
               type="password"
             />
@@ -99,14 +103,15 @@ export const Login = () => (
                 Esqueceu sua senha?{" "}
               </Link>
             </VStack>
-            <Button fontWeight={"bold"} type="submit">
+            <Button fontWeight={"bold"} type="submit" borderRadius={"3xl"}>
               {" "}
               ENTRAR{" "}
             </Button>
             <Button
               backgroundColor={"#FEC242"}
-              textColor={"purple.800"}
+              textColor={"purple.900"}
               fontWeight={"bold"}
+              borderRadius={"3xl"}
               _hover={{ backgroundColor: "var(--chakra-colors-yellow-300)" }}
             >
               {" "}
