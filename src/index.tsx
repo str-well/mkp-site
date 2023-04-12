@@ -10,6 +10,7 @@ const theme = extendTheme({
       // styles for the `body`
       body: {
         color: "white",
+        bg: "#1B052A",
       },
     },
   },
