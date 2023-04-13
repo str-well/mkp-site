@@ -1,15 +1,23 @@
+import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import {
   Button,
   Flex,
   HStack,
   Heading,
+  IconButton,
   Image,
   Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   SimpleGrid,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { HomeVideosList } from "../../components/HomeVideosList";
+import { MdList, MdOutlineHome, MdOutlineLocalMovies } from "react-icons/md";
+import { HomeVideosList } from "../../components/HomeVideos/HomeVideosList";
+import { Show } from "../../components/Show";
 
 export const Home = () => (
   <>
@@ -25,219 +33,405 @@ export const Home = () => (
         padding={"1rem"}
         flexDir={"column"}
       >
-        <Flex p={10} zIndex={4}>
-          <HStack spacing={8}>
-            <Image src="assets/logo-mkp-login.svg" alt="Logo" w={"15%"} />
-            <Link href="/login">Início</Link>
-            <Link href="/register">Minha Lista</Link>
-            <Link href="/register">Séries</Link>
-            <Link href="/register">Pesquisar</Link>
-          </HStack>
-        </Flex>
-        <VStack w={"50%"} h={"100%"} pt={"4rem"}>
-          <Flex
-            w={"100%"}
-            h={"100%"}
-            align={"center"}
-            justify={"center"}
-            zIndex={"99"}
-            pb={"6rem"}
-          >
-            <Flex justify={"center"} flexDir={"column"}>
-              <Heading as="h2" size="3xl">
-                O APRENDIZADO
-              </Heading>
-              <Heading
-                as="h2"
-                size="4xl"
-                style={{
-                  WebkitTextStroke: "0.5px #FEC242",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                NUNCA
-              </Heading>{" "}
-              <Heading as="h2" size="4xl" textColor={"#FEC242"}>
-                TERMINA
-              </Heading>
-              <Text w={"70%"} py={3}>
-                Acesse os conteúdos, complete os quizzes e receba os
-                certificados.
-              </Text>
-            </Flex>
+        <Show on={["mobile", "mobile-landscape"]}>
+          <Flex p={3} zIndex={4} w={"100%"} justify={"space-between"}>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label="Options"
+                icon={<HamburgerIcon />}
+                variant="solid"
+                size={"lg"}
+              />
+              <MenuList>
+                <MenuItem icon={<MdOutlineHome />}>Início</MenuItem>
+                <MenuItem icon={<MdList />}>Minha Lista</MenuItem>
+                <MenuItem icon={<MdOutlineLocalMovies />}>Séries</MenuItem>
+                <MenuItem icon={<SearchIcon />}>Pesquisar</MenuItem>
+              </MenuList>
+            </Menu>
+            <Image src="assets/logo-mkp-login.svg" alt="Logo" w={"60%"} />
           </Flex>
-        </VStack>
-        <VStack w={"40%"} zIndex={2}>
-          <Flex w={"100%"} align={"center"} justify={"center"}>
-            <Flex justify={"center"} flexDir={"column"}>
-              <Text>Performance • Crescimento • Desenvolvimento</Text>
-              <Flex w={"100%"} justify={"space-evenly"} pt={4}>
-                <Button
-                  backgroundColor={"#FEC242"}
-                  textColor={"purple.900"}
-                  fontWeight={"bold"}
-                  borderRadius={"3xl"}
-                  w={"100%"}
-                  _hover={{
-                    backgroundColor: "var(--chakra-colors-yellow-200)",
+        </Show>
+        <Show on={"desktop"}>
+          <Flex p={10} zIndex={4}>
+            <HStack spacing={8}>
+              <Image src="assets/logo-mkp-login.svg" alt="Logo" w={"15%"} />
+              <Link href="/login">Início</Link>
+              <Link href="/register">Minha Lista</Link>
+              <Link href="/register">Séries</Link>
+              <Link href="/register">Pesquisar</Link>
+            </HStack>
+          </Flex>
+        </Show>
+        <Show on={"desktop"}>
+          <VStack w={"50%"} h={"100%"} pt={"4rem"}>
+            <Flex
+              w={"100%"}
+              h={"100%"}
+              align={"center"}
+              justify={"center"}
+              zIndex={"99"}
+              pb={"6rem"}
+            >
+              <Flex justify={"center"} flexDir={"column"}>
+                <Heading as="h2" size="3xl">
+                  O APRENDIZADO
+                </Heading>
+                <Heading
+                  as="h2"
+                  size="4xl"
+                  style={{
+                    WebkitTextStroke: "0.5px #FEC242",
+                    WebkitTextFillColor: "transparent",
                   }}
                 >
-                  {" "}
-                  Assistir
-                </Button>
-                <Button
-                  backgroundColor={"rgb(255 255 255 / 25%)"}
-                  fontWeight={"bold"}
-                  borderRadius={"3xl"}
-                  w={"100%"}
-                  _hover={{ backgroundColor: "rgb(255 255 255 / 45%)" }}
-                >
-                  Saiba mais
-                </Button>
+                  NUNCA
+                </Heading>{" "}
+                <Heading as="h2" size="4xl" textColor={"#FEC242"}>
+                  TERMINA
+                </Heading>
+                <Text w={"70%"} py={3}>
+                  Acesse os conteúdos, complete os quizzes e receba os
+                  certificados.
+                </Text>
               </Flex>
             </Flex>
-          </Flex>
-        </VStack>
+          </VStack>
+        </Show>
+        <Show on={["mobile", "mobile-landscape"]}>
+          <VStack w={"100%"} h={"100%"} pt={"2rem"}>
+            <Flex
+              w={"100%"}
+              h={"100%"}
+              align={"center"}
+              justify={"center"}
+              zIndex={"99"}
+            >
+              <Flex justify={"center"} flexDir={"column"}>
+                <Heading as="h2" size="2xl">
+                  O APRENDIZADO
+                </Heading>
+                <Heading
+                  as="h2"
+                  size="3xl"
+                  style={{
+                    WebkitTextStroke: "0.5px #FEC242",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  NUNCA
+                </Heading>{" "}
+                <Heading as="h2" size="3xl" textColor={"#FEC242"}>
+                  TERMINA
+                </Heading>
+                <Text w={"70%"} py={3}>
+                  Acesse os conteúdos, complete os quizzes e receba os
+                  certificados.
+                </Text>
+              </Flex>
+            </Flex>
+          </VStack>
+        </Show>
+        <Show on={"desktop"}>
+          <VStack w={"40%"} zIndex={2}>
+            <Flex w={"100%"} align={"center"} justify={"center"}>
+              <Flex justify={"center"} flexDir={"column"}>
+                <Text>Performance • Crescimento • Desenvolvimento</Text>
+                <Flex w={"100%"} justify={"space-evenly"} pt={4}>
+                  <Button
+                    backgroundColor={"#FEC242"}
+                    textColor={"purple.900"}
+                    fontWeight={"bold"}
+                    borderRadius={"3xl"}
+                    w={"100%"}
+                    _hover={{
+                      backgroundColor: "var(--chakra-colors-yellow-200)",
+                    }}
+                  >
+                    {" "}
+                    Assistir
+                  </Button>
+                  <Button
+                    backgroundColor={"rgb(255 255 255 / 25%)"}
+                    fontWeight={"bold"}
+                    borderRadius={"3xl"}
+                    w={"100%"}
+                    _hover={{ backgroundColor: "rgb(255 255 255 / 45%)" }}
+                  >
+                    Saiba mais
+                  </Button>
+                </Flex>
+              </Flex>
+            </Flex>
+          </VStack>
+        </Show>
+        <Show on={["mobile", "mobile-landscape"]}>
+          <VStack w={"100%"} zIndex={2}>
+            <Flex w={"100%"} align={"center"} justify={"center"}>
+              <Flex justify={"center"} flexDir={"column"}>
+                <Text>Performance • Crescimento • Desenvolvimento</Text>
+                <Flex w={"100%"} justify={"space-evenly"} pt={4}>
+                  <Button
+                    backgroundColor={"#FEC242"}
+                    textColor={"purple.900"}
+                    fontWeight={"bold"}
+                    borderRadius={"3xl"}
+                    w={"100%"}
+                    _hover={{
+                      backgroundColor: "var(--chakra-colors-yellow-200)",
+                    }}
+                  >
+                    {" "}
+                    Assistir
+                  </Button>
+                  <Button
+                    backgroundColor={"rgb(255 255 255 / 25%)"}
+                    fontWeight={"bold"}
+                    borderRadius={"3xl"}
+                    w={"100%"}
+                    _hover={{ backgroundColor: "rgb(255 255 255 / 45%)" }}
+                  >
+                    Saiba mais
+                  </Button>
+                </Flex>
+              </Flex>
+            </Flex>
+          </VStack>
+        </Show>
       </Flex>
+      <Show on={["mobile", "mobile-landscape"]}>
+        <Flex pt={"4rem"} flexDir={"column"} w={"80%"} pb={"4rem"}>
+          <SimpleGrid
+            columns={1}
+            spacing={8}
+            w={"100%"}
+            placeItems={"center"}
+            _after={{
+              content: '""',
+              position: "absolute",
+              zIndex: 0,
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(255,255,255,0), #1B052A 45%);",
 
-      <Flex pt={"4rem"} flexDir={"column"} w={"80%"} pb={"4rem"}>
-        <SimpleGrid
-          columns={1}
-          spacing={8}
-          w={"100%"}
-          placeItems={"center"}
-          _after={{
-            content: '""',
-            position: "absolute",
-            zIndex: 0,
-            backgroundImage:
-              "linear-gradient(to bottom, rgba(255,255,255,0), #1B052A 55%);",
+              width: "100%",
+              height: "100%",
+              top: 0,
+              left: 0,
+              right: 0,
+            }}
+          >
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Em breve</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto1.png"
+                alt="teste"
+                borderRadius="full"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto2.png"
+                alt="teste"
+                borderRadius="full"
+                boxSize="190px"
+              />
+            </HStack>
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Últimos lançamentos</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto4.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto5.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+            </HStack>
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Assistir novamente</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto9.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto10.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+            </HStack>
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Sugestões para você</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto12.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto13.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+            </HStack>
+          </SimpleGrid>
+        </Flex>
+      </Show>
+      <Show on={"desktop"}>
+        <Flex pt={"4rem"} flexDir={"column"} w={"80%"} pb={"4rem"}>
+          <SimpleGrid
+            columns={1}
+            spacing={8}
+            w={"100%"}
+            placeItems={"center"}
+            _after={{
+              content: '""',
+              position: "absolute",
+              zIndex: 0,
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(255,255,255,0), #1B052A 55%);",
 
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            right: 0,
-          }}
-        >
-          <Text fontSize="xl" w="75%" zIndex={"9"}>
-            <b>Em breve</b>
-          </Text>{" "}
-          <HStack zIndex={"99"} w="75%">
-            <HomeVideosList
-              src="assets/testes-img-home/foto1.png"
-              alt="teste"
-              borderRadius="full"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto2.png"
-              alt="teste"
-              borderRadius="full"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto3.png"
-              alt="teste"
-              borderRadius="full"
-              boxSize="190px"
-            />
-          </HStack>
-          <Text fontSize="xl" w="75%" zIndex={"9"}>
-            <b>Últimos lançamentos</b>
-          </Text>{" "}
-          <HStack zIndex={"99"} w="75%">
-            <HomeVideosList
-              src="assets/testes-img-home/foto4.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto5.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto6.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto7.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto8.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-          </HStack>
-          <Text fontSize="xl" w="75%" zIndex={"9"}>
-            <b>Assistir novamente</b>
-          </Text>{" "}
-          <HStack zIndex={"99"} w="75%">
-            <HomeVideosList
-              src="assets/testes-img-home/foto9.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto10.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto11.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-          </HStack>
-          <Text fontSize="xl" w="75%" zIndex={"9"}>
-            <b>Sugestões para você</b>
-          </Text>{" "}
-          <HStack zIndex={"99"} w="75%">
-            <HomeVideosList
-              src="assets/testes-img-home/foto12.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto13.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto2.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto8.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-            <HomeVideosList
-              src="assets/testes-img-home/foto4.png"
-              alt="teste"
-              borderRadius="25px"
-              boxSize="190px"
-            />
-          </HStack>
-        </SimpleGrid>
-      </Flex>
+              width: "100%",
+              height: "100%",
+              top: 0,
+              left: 0,
+              right: 0,
+            }}
+          >
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Em breve</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto1.png"
+                alt="teste"
+                borderRadius="full"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto2.png"
+                alt="teste"
+                borderRadius="full"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto3.png"
+                alt="teste"
+                borderRadius="full"
+                boxSize="190px"
+              />
+            </HStack>
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Últimos lançamentos</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto4.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto5.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto6.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto7.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto8.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+            </HStack>
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Assistir novamente</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto9.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto10.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto11.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+            </HStack>
+            <Text fontSize="xl" w="75%" zIndex={"9"}>
+              <b>Sugestões para você</b>
+            </Text>{" "}
+            <HStack zIndex={"99"} w="75%">
+              <HomeVideosList
+                src="assets/testes-img-home/foto12.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto13.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto2.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto8.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+              <HomeVideosList
+                src="assets/testes-img-home/foto4.png"
+                alt="teste"
+                borderRadius="25px"
+                boxSize="190px"
+              />
+            </HStack>
+          </SimpleGrid>
+        </Flex>
+      </Show>
     </Flex>
   </>
 );
