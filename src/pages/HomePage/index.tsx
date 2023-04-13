@@ -25,7 +25,7 @@ export const Home = () => (
         padding={"1rem"}
         flexDir={"column"}
       >
-        <Flex p={10}>
+        <Flex p={10} zIndex={4}>
           <HStack spacing={8}>
             <Image src="assets/logo-mkp-login.svg" alt="Logo" w={"15%"} />
             <Link href="/login">Início</Link>
@@ -44,12 +44,12 @@ export const Home = () => (
             pb={"6rem"}
           >
             <Flex justify={"center"} flexDir={"column"}>
-              <Heading as="h2" size="2xl">
+              <Heading as="h2" size="3xl">
                 O APRENDIZADO
               </Heading>
               <Heading
                 as="h2"
-                size="3xl"
+                size="4xl"
                 style={{
                   WebkitTextStroke: "0.5px #FEC242",
                   WebkitTextFillColor: "transparent",
@@ -57,10 +57,10 @@ export const Home = () => (
               >
                 NUNCA
               </Heading>{" "}
-              <Heading as="h2" size="3xl" textColor={"#FEC242"}>
+              <Heading as="h2" size="4xl" textColor={"#FEC242"}>
                 TERMINA
               </Heading>
-              <Text w={"60%"} pt={"3rem"}>
+              <Text w={"70%"} py={3}>
                 Acesse os conteúdos, complete os quizzes e receba os
                 certificados.
               </Text>
@@ -109,9 +109,9 @@ export const Home = () => (
           _after={{
             content: '""',
             position: "absolute",
-            zIndex: 1,
+            zIndex: 0,
             backgroundImage:
-              "linear-gradient(to bottom, rgba(255,255,255,0), #1B052A 60%);",
+              "linear-gradient(to bottom, rgba(255,255,255,0), #1B052A 55%);",
 
             width: "100%",
             height: "100%",
