@@ -39,6 +39,7 @@ export const Home = () => (
           <Flex p={3} zIndex={999} w={"100%"} justify={"space-between"}>
             <Menu>
               <MenuButton
+                backgroundColor={"rgba(255, 255, 255, 0.45)"}
                 as={IconButton}
                 aria-label="Options"
                 icon={<HamburgerIcon />}
