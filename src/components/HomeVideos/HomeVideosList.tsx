@@ -3,8 +3,10 @@ import { Image } from "@chakra-ui/react";
 interface HomeVideosListProps {
   src: string;
   alt: string;
-  borderRadius: string;
-  boxSize: string;
+  borderRadius?: string | number;
+  boxSize?: string | number;
+  htmlHeight?: string | number;
+  htmlWidth?: string | number;
 }
 
 export function HomeVideosList({
@@ -12,8 +14,17 @@ export function HomeVideosList({
   alt,
   borderRadius,
   boxSize,
+  htmlHeight,
+  htmlWidth,
 }: HomeVideosListProps) {
   return (
-    <Image borderRadius={borderRadius} boxSize={boxSize} src={src} alt={alt} />
+    <Image
+      borderRadius={borderRadius}
+      boxSize={boxSize}
+      htmlHeight={htmlHeight}
+      htmlWidth={htmlWidth}
+      src={src}
+      alt={alt}
+    />
   );
 }
