@@ -1,5 +1,6 @@
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import {
+  Box,
   Button,
   Flex,
   HStack,
@@ -15,6 +16,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { Carousel, Provider } from "chakra-ui-carousel";
 import { MdList, MdOutlineHome, MdOutlineLocalMovies } from "react-icons/md";
 import { HomeVideosList } from "../../components/HomeVideos/HomeVideosList";
 import { Show } from "../../components/Show";
@@ -34,7 +36,7 @@ export const Home = () => (
         flexDir={"column"}
       >
         <Show on={["mobile", "mobile-landscape"]}>
-          <Flex p={3} zIndex={4} w={"100%"} justify={"space-between"}>
+          <Flex p={3} zIndex={999} w={"100%"} justify={"space-between"}>
             <Menu>
               <MenuButton
                 as={IconButton}
@@ -108,7 +110,7 @@ export const Home = () => (
               justify={"center"}
               zIndex={"99"}
             >
-              <Flex justify={"center"} flexDir={"column"}>
+              <Flex justify={"center"} flexDir={"column"} pt={"4rem"}>
                 <Heading as="h2" size="2xl">
                   O APRENDIZADO
                 </Heading>
@@ -169,7 +171,7 @@ export const Home = () => (
         <Show on={["mobile", "mobile-landscape"]}>
           <VStack w={"100%"} zIndex={2}>
             <Flex w={"100%"} align={"center"} justify={"center"}>
-              <Flex justify={"center"} flexDir={"column"}>
+              <Flex justify={"center"} flexDir={"column"} pt={"4rem"}>
                 <Text>Performance • Crescimento • Desenvolvimento</Text>
                 <Flex w={"100%"} justify={"space-evenly"} pt={4}>
                   <Button
@@ -201,7 +203,7 @@ export const Home = () => (
         </Show>
       </Flex>
       <Show on={["mobile", "mobile-landscape"]}>
-        <Flex pt={"4rem"} flexDir={"column"} w={"80%"} pb={"4rem"}>
+        <Flex pt={"4rem"} flexDir={"column"} w={"100%"} pb={"4rem"}>
           <SimpleGrid
             columns={1}
             spacing={8}
@@ -224,71 +226,143 @@ export const Home = () => (
             <Text fontSize="xl" w="75%" zIndex={"9"}>
               <b>Em breve</b>
             </Text>{" "}
-            <HStack zIndex={"99"} w="75%">
+            <HStack zIndex={"99"} w="100%" justify={"center"}>
               <HomeVideosList
                 src="assets/testes-img-home/foto1.png"
                 alt="teste"
                 borderRadius="full"
-                boxSize="190px"
+                boxSize="150px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto2.png"
                 alt="teste"
                 borderRadius="full"
-                boxSize="190px"
+                boxSize="150px"
               />
             </HStack>
             <Text fontSize="xl" w="75%" zIndex={"9"}>
               <b>Últimos lançamentos</b>
             </Text>{" "}
-            <HStack zIndex={"99"} w="75%">
-              <HomeVideosList
-                src="assets/testes-img-home/foto4.png"
-                alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
-              />
-              <HomeVideosList
-                src="assets/testes-img-home/foto5.png"
-                alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
-              />
-            </HStack>
+            <Box zIndex={"99"} w="75%">
+              <Provider>
+                <Carousel gap={1}>
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto4.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto5.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />{" "}
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto5.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />{" "}
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto5.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />{" "}
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto5.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />{" "}
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto5.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                </Carousel>
+              </Provider>
+            </Box>
             <Text fontSize="xl" w="75%" zIndex={"9"}>
               <b>Assistir novamente</b>
             </Text>{" "}
-            <HStack zIndex={"99"} w="75%">
-              <HomeVideosList
-                src="assets/testes-img-home/foto9.png"
-                alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
-              />
-              <HomeVideosList
-                src="assets/testes-img-home/foto10.png"
-                alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
-              />
-            </HStack>
+            <Box zIndex={"99"} w="75%">
+              <Provider>
+                <Carousel gap={1}>
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto9.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto10.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto10.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto10.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto10.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                </Carousel>
+              </Provider>
+            </Box>
             <Text fontSize="xl" w="75%" zIndex={"9"}>
               <b>Sugestões para você</b>
             </Text>{" "}
-            <HStack zIndex={"99"} w="75%">
-              <HomeVideosList
-                src="assets/testes-img-home/foto12.png"
-                alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
-              />
-              <HomeVideosList
-                src="assets/testes-img-home/foto13.png"
-                alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
-              />
-            </HStack>
+            <Box zIndex={"99"} w="75%">
+              <Provider>
+                <Carousel gap={1}>
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto12.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto13.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />{" "}
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto13.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />{" "}
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto13.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />{" "}
+                  <HomeVideosList
+                    src="assets/testes-img-home/foto13.png"
+                    alt="teste"
+                    borderRadius="25px"
+                    boxSize="145px"
+                  />
+                </Carousel>
+              </Provider>
+            </Box>
           </SimpleGrid>
         </Flex>
       </Show>
@@ -343,32 +417,37 @@ export const Home = () => (
               <HomeVideosList
                 src="assets/testes-img-home/foto4.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto5.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto6.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto7.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto8.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
             </HStack>
             <Text fontSize="xl" w="75%" zIndex={"9"}>
@@ -378,20 +457,23 @@ export const Home = () => (
               <HomeVideosList
                 src="assets/testes-img-home/foto9.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto10.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto11.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
             </HStack>
             <Text fontSize="xl" w="75%" zIndex={"9"}>
@@ -401,32 +483,37 @@ export const Home = () => (
               <HomeVideosList
                 src="assets/testes-img-home/foto12.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto13.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto2.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto8.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
               <HomeVideosList
                 src="assets/testes-img-home/foto4.png"
                 alt="teste"
-                borderRadius="25px"
-                boxSize="190px"
+                borderRadius="63px"
+                htmlWidth="190px"
+                htmlHeight="200px"
               />
             </HStack>
           </SimpleGrid>
