@@ -120,6 +120,9 @@ export const Login = () => (
               fontWeight={"bold"}
               type="submit"
               borderRadius={"3xl"}
+              onClick={() => {
+                window.location.href = "/home";
+              }}
               _hover={{ backgroundColor: "rgb(255 255 255 / 45%)" }}
             >
               {" "}
