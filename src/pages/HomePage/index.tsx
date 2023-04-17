@@ -46,11 +46,31 @@ export const Home = () => (
                 variant="solid"
                 size={"lg"}
               />
-              <MenuList>
-                <MenuItem icon={<MdOutlineHome />}>Início</MenuItem>
-                <MenuItem icon={<MdList />}>Minha Lista</MenuItem>
-                <MenuItem icon={<MdOutlineLocalMovies />}>Séries</MenuItem>
-                <MenuItem icon={<SearchIcon />}>Pesquisar</MenuItem>
+              <MenuList backgroundColor={"rgba(255, 255, 255, 0.45)"}>
+                <MenuItem
+                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
+                  icon={<MdOutlineHome />}
+                >
+                  Início
+                </MenuItem>
+                <MenuItem
+                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
+                  icon={<MdList />}
+                >
+                  Minha Lista
+                </MenuItem>
+                <MenuItem
+                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
+                  icon={<MdOutlineLocalMovies />}
+                >
+                  Séries
+                </MenuItem>
+                <MenuItem
+                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
+                  icon={<SearchIcon />}
+                >
+                  Pesquisar
+                </MenuItem>
               </MenuList>
             </Menu>
             <Image src="assets/logo-mkp-login.svg" alt="Logo" w={"60%"} />
