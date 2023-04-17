@@ -39,7 +39,7 @@ export const Home = () => (
           <Flex p={3} zIndex={999} w={"100%"} justify={"space-between"}>
             <Menu>
               <MenuButton
-                backgroundColor={"rgba(255, 255, 255, 0.45)"}
+                backgroundColor={"#82768a94"}
                 as={IconButton}
                 aria-label="Options"
                 icon={<HamburgerIcon />}
@@ -353,19 +353,19 @@ export const Home = () => (
                     alt="teste"
                     borderRadius="25px"
                     boxSize="145px"
-                  />{" "}
+                  />
                   <HomeVideosList
                     src="assets/testes-img-home/foto13.png"
                     alt="teste"
                     borderRadius="25px"
                     boxSize="145px"
-                  />{" "}
+                  />
                   <HomeVideosList
                     src="assets/testes-img-home/foto13.png"
                     alt="teste"
                     borderRadius="25px"
                     boxSize="145px"
-                  />{" "}
+                  />
                   <HomeVideosList
                     src="assets/testes-img-home/foto13.png"
                     alt="teste"
