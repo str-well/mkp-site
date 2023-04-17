@@ -21,6 +21,8 @@ import { MdList, MdOutlineHome, MdOutlineLocalMovies } from "react-icons/md";
 import { HomeVideosList } from "../../components/HomeVideos/HomeVideosList";
 import { Show } from "../../components/Show";
 
+var bgColorMenu = "#82768a";
+
 export const Home = () => (
   <>
     <Flex w={"100%"} h={"100vh"} flexDir={"column"}>
@@ -46,20 +48,23 @@ export const Home = () => (
                 variant="solid"
                 size={"lg"}
               />
-              <MenuList backgroundColor={"#82768a"}>
-                <MenuItem backgroundColor={"#82768a"} icon={<MdOutlineHome />}>
+              <MenuList backgroundColor={bgColorMenu}>
+                <MenuItem
+                  backgroundColor={bgColorMenu}
+                  icon={<MdOutlineHome />}
+                >
                   Início
                 </MenuItem>
-                <MenuItem backgroundColor={"#82768a"} icon={<MdList />}>
+                <MenuItem backgroundColor={bgColorMenu} icon={<MdList />}>
                   Minha Lista
                 </MenuItem>
                 <MenuItem
-                  backgroundColor={"#82768a"}
+                  backgroundColor={bgColorMenu}
                   icon={<MdOutlineLocalMovies />}
                 >
                   Séries
                 </MenuItem>
-                <MenuItem backgroundColor={"#82768a"} icon={<SearchIcon />}>
+                <MenuItem backgroundColor={bgColorMenu} icon={<SearchIcon />}>
                   Pesquisar
                 </MenuItem>
               </MenuList>
@@ -269,25 +274,25 @@ export const Home = () => (
                     alt="teste"
                     borderRadius="25px"
                     boxSize="145px"
-                  />{" "}
+                  />
                   <HomeVideosList
                     src="assets/testes-img-home/foto5.png"
                     alt="teste"
                     borderRadius="25px"
                     boxSize="145px"
-                  />{" "}
+                  />
                   <HomeVideosList
                     src="assets/testes-img-home/foto5.png"
                     alt="teste"
                     borderRadius="25px"
                     boxSize="145px"
-                  />{" "}
+                  />
                   <HomeVideosList
                     src="assets/testes-img-home/foto5.png"
                     alt="teste"
                     borderRadius="25px"
                     boxSize="145px"
-                  />{" "}
+                  />
                   <HomeVideosList
                     src="assets/testes-img-home/foto5.png"
                     alt="teste"
