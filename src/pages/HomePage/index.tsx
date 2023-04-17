@@ -46,29 +46,20 @@ export const Home = () => (
                 variant="solid"
                 size={"lg"}
               />
-              <MenuList backgroundColor={"rgba(255, 255, 255, 0.45)"}>
-                <MenuItem
-                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
-                  icon={<MdOutlineHome />}
-                >
+              <MenuList backgroundColor={"#82768a"}>
+                <MenuItem backgroundColor={"#82768a"} icon={<MdOutlineHome />}>
                   Início
                 </MenuItem>
-                <MenuItem
-                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
-                  icon={<MdList />}
-                >
+                <MenuItem backgroundColor={"#82768a"} icon={<MdList />}>
                   Minha Lista
                 </MenuItem>
                 <MenuItem
-                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
+                  backgroundColor={"#82768a"}
                   icon={<MdOutlineLocalMovies />}
                 >
                   Séries
                 </MenuItem>
-                <MenuItem
-                  backgroundColor={"rgba(255, 255, 255, 0.02)"}
-                  icon={<SearchIcon />}
-                >
+                <MenuItem backgroundColor={"#82768a"} icon={<SearchIcon />}>
                   Pesquisar
                 </MenuItem>
               </MenuList>
