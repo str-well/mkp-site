@@ -20,12 +20,10 @@ export const Login = (props: LoginFormProps) => {
       bgSize={"cover"}
       bgPosition={"center"}
       bgRepeat={"no-repeat"}
-      textColor={"white"}
       padding={"1rem"}
     >
       <Flex
         w={"50%"}
-        h={"100%"}
         align={"center"}
         justify={"center"}
         flexDir={"column"}
@@ -65,17 +63,15 @@ export const Login = (props: LoginFormProps) => {
       </Flex>
       <Flex
         w={["100%", "50%"]}
-        h={"100%"}
         align={"center"}
         justify={"center"}
         flexDir={"column"}
       >
-        <Flex justify={"center"} flexDir={"column"}>
+        <Flex flexDir={"column"}>
           {" "}
           <Image
             src="/assets/logo-mkp-login.svg"
             alt="Logo"
-            w={["80%", "100%"]}
             alignSelf={"center"}
           />
           {forgotPassword ? (

@@ -33,7 +33,6 @@ export const Home = () => (
         bgSize={"cover"}
         bgPosition={"center"}
         bgRepeat={"no-repeat"}
-        textColor={"white"}
         padding={"1rem"}
         flexDir={"column"}
       >
